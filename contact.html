@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Tenuta Contact Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bckgrd">
+    <header class="head two-items">
+        <div class="pad2">
+            <a href="index.html"><img class="logo" src="images/logo.png" alt="Matthew Tenuta Logo"></a>
+        </div>
+        <nav class="full" aria-label="Main Navigation">
+            <h2 class="hidden">Main Navigation</h2>
+            <ul>
+                <li><a class="nav-element font" href="about.html">About</a></li>
+                <li><a class="nav-element font" href="index.html">Portfolio</a></li>
+                <li><a class="active nav-element font" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Menu -->
+       <div class="mobile tablet">
+        <input type="checkbox" id="overlay-input"/>
+        <label for="overlay-input" id="overlay-button">
+            <span class="clicky"></span>
+    </label>
+
+        <div id="overlay">
+            <ul>
+                <li><a class="font nav-element whiteBorder" href="about.html">About</a></li>
+                <li><a class="font nav-element" href="index.html">Portfolio</a></li>
+                <li><a class="active font nav-element" href="contact.html">Contact</a></li>
+            </ul>
+
+            <svg class="shape-overlays noPoint" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%"   stop-color="#00c99b"/>
+                    <stop offset="100%" stop-color="#ff0ea1"/>
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%"   stop-color="#ffd392"/>
+                    <stop offset="100%" stop-color="#ff3898"/>
+                </linearGradient>
+                <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%"   stop-color="#110046"/>
+                    <stop offset="100%" stop-color="#32004a"/>
+                </linearGradient>
+                </defs>
+                <path class="shape-overlays__path" fill="url(#gradient1)"></path>
+                <path class="shape-overlays__path" fill="url(#gradient2)"></path>
+                <path class="shape-overlays__path" fill="url(#gradient3)"></path>
+            </svg>
+        </div>
+        </div>
+        <!-- End Mobile Menu -->
+    </header>
+
+
+    <h1 class="hidden">Matthew Tenuta Mail Form</h1>
+
+
+    <main class="main">
+        <div>
+            <div class="borderBottomWhite one-item">
+                <h2 class="topPad2 font centerText">Let's Work Together!</h2>
+            </div>
+            <div class="one-item">
+                <p class="centerText wierdPad paragraphFont">
+                    If you are a big fan of my work and want to get in contact, you are in luck. I have created this super cool mail form for you to directly send me a message. Just fill out all the fields listed below and press the send button. Please refrain from pressing the send button a bunch of times.
+
+                </p>
+                <p class="botPad2 wierdPad centerText paragraphFont">
+                    If I do not respond, there is the possibility that the message went into my junk folder, as a backup my phone number will be listed below. Thanks and have a great day.
+                </p>
+            </div>
+        </div>
+
+        <form class="one-item" action="includes/mail/send.php" method="POST" id="mail-form">
+            <div class="botPad">
+                <input class="mailInput borderRad" ref="fname" placeholder="First Name"  type="text" id="firstname" name="firstname" required="required">
+            </div>
+
+            <div class="botPad">
+            <input class="mailInput borderRad" ref="lname" placeholder="Last Name" type="text" id="lastname" name="lastname" required>
+            </div>
+
+            <div class="botPad">
+            <input class="mailInput borderRad" ref="email" placeholder="Email" type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+            <textarea class="mailInput borderRad" ref="message" placeholder="Tell me what's on your mind" name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="wierdPad2">
+                <div class="pad">
+                    <input @click.prevent="processMail" type="submit" class="submitButton pad2" value="Send!">
+                </div>
+                <div class="centerText font" ref="emailMessage">
+                    <h2 class="font centerText"> Awaiting Input... </h2>
+                </div>
+            </div>
+        </form>
+
+    </main>
+    <footer class="foot footerColor">
+        <section class="two-items">
+            <div class="flex">
+                <p class="footerText centerText pad2 font">Phone: (519)-671-6288 <br><br> Made With Love &#9829;</p>
+            </div>
+            <div class="flex imgCenter">
+                <a href="https://github.com/MattTenuta"><img class="git pad" src="images/github.svg" alt="GitHub Logo"></a>
+                <a href="https://www.linkedin.com/in/matthew-tenuta-878303232/"><img class="link pad" src="images/linkdin.svg" alt="Linkdin Logo"></a>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="js/main.js" type="module" defer></script>
+</body>
+</html>

@@ -96,7 +96,7 @@ function render() {
             processMailFailure(result) {
                 this.$refs.emailMessage.style.display = "block";
                 this.$refs.emailMessage.innerHTML = "";
-                this.$refs.emailMessage.innerHTML = "Ruh Roh Raggy, An error has occured";
+                this.$refs.emailMessage.innerHTML = "Sorry, your message has not been sent. <br> Make sure all the fields are filled out.";
                 console.log(result)
             },
 

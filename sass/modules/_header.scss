@@ -1,0 +1,203 @@
+
+header {
+    position: relative;
+    top: 0em;
+    border-bottom: 1px solid #e6e6e6;
+    box-shadow: 0px 5px 8px #888;
+ }
+
+ .logo {
+  max-width: 100px;
+  animation-duration: 4s;
+  transition: .5s ease ;
+ }
+
+ .logo:hover {
+  cursor: pointer;
+  background-color: #00aeef;
+  position: relative;
+  animation-name: example;
+  animation-iteration-count: infinite;
+  box-shadow: 0px 0px 10px 5px rgb(116, 115, 115);
+}
+
+header img {
+  width: 150px;
+  max-height: 100px;
+  background-color: white;
+}
+
+nav ul {
+    margin: 3em 0 0 0;
+    padding: 0em;
+    text-decoration: none;
+    text-align: center;
+ }
+
+ nav li {
+    display: inline;
+    padding: 1em;
+ }
+
+ nav li a {
+    text-decoration: none;
+    color: #080808;
+    font-size: inherit;
+ }
+
+.nav-element {
+    font-size: 2.5em;
+}
+
+.nav-elementOverlay {
+  font-size: 2.5em;
+  transition: .5s ease ;
+}
+
+.shape-overlays {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* _____________________________________
+
+   02. Mobile Nav
+   _____________________________________ */
+
+   @keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+
+  @-webkit-keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+
+  @keyframes example {
+    0%   {background-color:red;}
+    25%  {background-color:yellow;}
+    50%  {background-color:blue;}
+    75%  {background-color:green;}
+    100% {background-color:red;}
+  }
+
+  #overlay-button {
+    position: absolute;
+    right: 1em;
+    padding: 26px 11px;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  #overlay-button span {
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    background-color: #025a7a;
+    position: relative;
+    display: block;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #overlay-button span:before {
+    top: -7px;
+    visibility: visible;
+  }
+
+  #overlay-button span:after {
+    top: 7px;
+  }
+
+  #overlay-button span:before, #overlay-button span:after {
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    background-color: #025a7a;
+    position: absolute;
+    content: "";
+    transition: all 0.2s ease-in-out;
+  }
+
+  #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+    background: #333332;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ #overlay {
+    visibility: visible;
+  }
+
+  input[type=checkbox]:checked ~ #overlay-button:hover span,
+  input[type=checkbox]:checked ~ #overlay-button span {
+    background: transparent;
+  }
+
+  input[type=checkbox]:checked ~ #overlay-button span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+    opacity: 1;
+  }
+
+  input[type=checkbox]:checked ~ #overlay-button span:after {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  #overlay {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, rgba(17,0,70), rgba(50,0,74));
+    z-index: 2;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* This fixes scrolling issue */
+    overflow: hidden;
+    box-shadow: 0px 5px 8px #888;
+  }
+
+  #overlay.active {
+    visibility: visible;
+  }
+
+  #overlay ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  #overlay ul li {
+    padding: .75em;
+  }
+
+  #overlay ul li a {
+    color: white;
+    text-decoration: none;
+    line-height: 2em;
+  }
+
+  #overlay ul li a:hover {
+    color: #333332;
+  }
+
